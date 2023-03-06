@@ -45,7 +45,7 @@ public class Scenario2 {
         given().headers("Authorization", "Bearer " + EngageData.TOKEN)
                 .contentType(EngageData.CONTENT_TYPE)
                 .body(data2)
-                .when().post(EngageData.URL)
+                .when().put(EngageData.URL + id)
                 .then().statusCode(400).log().all();
     }
 

@@ -9,9 +9,11 @@ import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class Scenario4 {
+public class Scenario5 {
     int id;
     String name = RandomStringUtils.randomAlphabetic(5);
+    int tech_id = EngageData.TECH_ID;
+    String Ass_tags[] = EngageData.ASSO_TAGS;
     String descriptionData = EngageData.DESCRIPTION_DATA;
 
     @Test(priority = 1)
@@ -58,6 +60,8 @@ public class Scenario4 {
         Assert.assertEquals(res.getStatusCode(), 200);
         Assert.assertEquals(res.jsonPath().get("name"), name);
         Assert.assertEquals(res.jsonPath().get("tech_description"), descriptionData);
+//        Assert.assertEquals(res.jsonPath().get("tech_id"), tech_id);
+//        Assert.assertEquals(res.jsonPath().get("tech_description"), descriptionData);
     }
 
     @Test(description = "delete the above entered data", dependsOnMethods = "testPostRequest", priority = 4)

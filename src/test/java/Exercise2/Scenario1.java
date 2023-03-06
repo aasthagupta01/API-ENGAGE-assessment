@@ -7,7 +7,6 @@ import static io.restassured.RestAssured.given;
 
 public class Scenario1 {
     DataPost data = new DataPost();
-    EngageData engageData = new EngageData();
 
     @Test(description = "Pass the data in the body without \"name\" in the body")
     public void Scenario1(){

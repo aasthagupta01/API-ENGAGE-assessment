@@ -9,8 +9,6 @@ import static io.restassured.RestAssured.given;
 
 public class GetRequest1 {
 
-    EngageData engageData = new EngageData();
-
     @Test
     public void testGetRequest(){
 

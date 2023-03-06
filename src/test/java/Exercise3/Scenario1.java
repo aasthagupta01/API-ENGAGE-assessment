@@ -33,7 +33,6 @@ public class Scenario1 {
     void testPutRequest() {
 
         DataPost data2 = new DataPost();
-        //   data2.setName(EngageData.NAME);
         data2.setTech_type_id(EngageData.TECH_ID);
         data2.setDescription(EngageData.DESCRIPTION_DATA);
         data2.setDoc_link(EngageData.DOC_LINK);
@@ -43,7 +42,7 @@ public class Scenario1 {
         given().headers("Authorization", "Bearer " + EngageData.TOKEN)
                 .contentType(EngageData.CONTENT_TYPE)
                 .body(data2)
-                .when().post(EngageData.URL)
+                .when().put(EngageData.URL + id)
                 .then().statusCode(400).log().all();
     }
 
